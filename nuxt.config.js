@@ -22,11 +22,12 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/normalize.css'],
+  css: ['~/assets/css/normalize.css', 'node_modules/swiper/css/swiper.css'],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -48,5 +49,20 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  // hooks: {
+  //   // This hook is called before rendering the html to the browser
+  //   'render:route': (url, result) => {
+  //     console.log(url);
+  //     if (url.indexOf('?code=') >= 0) {
+  //       let html = result.html;
+  //       html = html.replace(
+  //         '<link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">',
+  //         `<link data-n-head="ssr" rel="icon" type="image/x-icon" href="https://cdn.bringprice.com/image/2019/ic-bp-on.png">`
+  //       );
+  //       // Update result html
+  //       result.html = html;
+  //     }
+  //   }
+  // }
 };
